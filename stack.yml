@@ -1,0 +1,14 @@
+version: "3"
+services:
+    main:
+        image: registry.gitlab.com/farrout/jboss-opencollab:latest
+        networks:
+            - overlay
+        ports:
+            - "8080:8080"
+volumes:
+    data:
+
+networks:
+  overlay:
+    driver: overlay
