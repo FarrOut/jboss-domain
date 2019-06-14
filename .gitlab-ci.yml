@@ -12,9 +12,9 @@ build-master:
   stage: build
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
-    - docker tag "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" "$DOCKER_REGISTRY_USER/jboss-domain:latest"
+    - docker tag "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" "$DOCKER_REGISTRY_USER/jboss:domain-latest"
     - docker login -u "$DOCKER_REGISTRY_USER" -p "$DOCKER_REGISTRY_PASSWORD" $DOCKER_REGISTRY
-    - docker push "$DOCKER_REGISTRY_USER/jboss-domain:latest"
+    - docker push "$DOCKER_REGISTRY_USER/jboss:domain-latest"
   only:
     - master
 
